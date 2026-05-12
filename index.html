@@ -8,6 +8,7 @@
     <title>Telegram Shop</title>
 
     <style>
+
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap');
 
         * {
@@ -37,7 +38,7 @@
         .card {
             background: var(--tg-theme-secondary-bg-color);
             border-radius: 15px;
-            padding: 15px;
+            padding: 20px;
             text-align: center;
         }
 
@@ -106,27 +107,112 @@
         <img src="https://cdn-icons-png.flaticon.com/512/0/191.png">
         <h2>iPhone 15 Pro</h2>
         <div class="price">55 999 ₴</div>
-        <button class="buy-btn" data-product="iPhone 15 Pro">
-            Купити
-        </button>
+        <button class="buy-btn" data-product="iPhone 15 Pro">Купити</button>
     </div>
 
     <div class="card">
         <img src="https://cdn-icons-png.flaticon.com/512/5969/5969044.png">
         <h2>MacBook Air M3</h2>
         <div class="price">64 999 ₴</div>
-        <button class="buy-btn" data-product="MacBook Air M3">
-            Купити
-        </button>
+        <button class="buy-btn" data-product="MacBook Air M3">Купити</button>
     </div>
 
     <div class="card">
         <img src="https://cdn-icons-png.flaticon.com/512/3659/3659898.png">
         <h2>AirPods Pro</h2>
         <div class="price">11 999 ₴</div>
-        <button class="buy-btn" data-product="AirPods Pro">
-            Купити
-        </button>
+        <button class="buy-btn" data-product="AirPods Pro">Купити</button>
+    </div>
+
+    <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/2706/2706962.png">
+        <h2>Apple Watch Ultra</h2>
+        <div class="price">39 999 ₴</div>
+        <button class="buy-btn" data-product="Apple Watch Ultra">Купити</button>
+    </div>
+
+    <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/2920/2920244.png">
+        <h2>iPad Pro</h2>
+        <div class="price">42 500 ₴</div>
+        <button class="buy-btn" data-product="iPad Pro">Купити</button>
+    </div>
+
+    <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/1041/1041916.png">
+        <h2>Samsung Galaxy S24</h2>
+        <div class="price">41 999 ₴</div>
+        <button class="buy-btn" data-product="Samsung Galaxy S24">Купити</button>
+    </div>
+
+    <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/3659/3659784.png">
+        <h2>Google Pixel 9 Pro</h2>
+        <div class="price">46 999 ₴</div>
+        <button class="buy-btn" data-product="Google Pixel 9 Pro">Купити</button>
+    </div>
+
+    <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/3659/3659784.png">
+        <h2>Google Pixel 10 Pro</h2>
+        <div class="price">52 999 ₴</div>
+        <button class="buy-btn" data-product="Google Pixel 10 Pro">Купити</button>
+    </div>
+
+    <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/5977/5977590.png">
+        <h2>PlayStation 5</h2>
+        <div class="price">28 999 ₴</div>
+        <button class="buy-btn" data-product="PlayStation 5">Купити</button>
+    </div>
+
+    <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/3659/3659899.png">
+        <h2>Xbox Series X</h2>
+        <div class="price">26 499 ₴</div>
+        <button class="buy-btn" data-product="Xbox Series X">Купити</button>
+    </div>
+
+    <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/743/743922.png">
+        <h2>Gaming Keyboard</h2>
+        <div class="price">4 999 ₴</div>
+        <button class="buy-btn" data-product="Gaming Keyboard">Купити</button>
+    </div>
+
+    <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/1048/1048953.png">
+        <h2>Gaming Mouse</h2>
+        <div class="price">2 799 ₴</div>
+        <button class="buy-btn" data-product="Gaming Mouse">Купити</button>
+    </div>
+
+    <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/3659/3659950.png">
+        <h2>Dell XPS 15</h2>
+        <div class="price">73 999 ₴</div>
+        <button class="buy-btn" data-product="Dell XPS 15">Купити</button>
+    </div>
+
+    <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/3474/3474360.png">
+        <h2>Mechanical Keyboard</h2>
+        <div class="price">5 499 ₴</div>
+        <button class="buy-btn" data-product="Mechanical Keyboard">Купити</button>
+    </div>
+
+    <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/3659/3659896.png">
+        <h2>Sony WH-1000XM5</h2>
+        <div class="price">15 999 ₴</div>
+        <button class="buy-btn" data-product="Sony WH-1000XM5">Купити</button>
+    </div>
+
+    <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/2933/2933245.png">
+        <h2>Nintendo Switch OLED</h2>
+        <div class="price">18 499 ₴</div>
+        <button class="buy-btn" data-product="Nintendo Switch OLED">Купити</button>
     </div>
 
 </div>
@@ -158,6 +244,7 @@
     let buyButtons = document.querySelectorAll(".buy-btn");
 
     buyButtons.forEach(btn => {
+
         btn.addEventListener("click", () => {
 
             selectedProduct = btn.dataset.product;
@@ -169,6 +256,7 @@
                 tg.initDataUnsafe.user.first_name || "";
 
         });
+
     });
 
     document.getElementById("order").addEventListener("click", () => {
@@ -180,6 +268,18 @@
         if(name.length < 2) {
             document.getElementById("error").innerText =
                 "Введіть ім'я";
+            return;
+        }
+
+        if(email.length < 5) {
+            document.getElementById("error").innerText =
+                "Введіть email";
+            return;
+        }
+
+        if(phone.length < 5) {
+            document.getElementById("error").innerText =
+                "Введіть номер телефону";
             return;
         }
 
