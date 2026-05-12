@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>Shop</title>
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Telegram Shop</title>
 
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat;wght@200;500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap');
 
         * {
             margin: 0;
@@ -17,125 +18,185 @@
 
         body {
             font-family: 'Montserrat', sans-serif;
-            font-weight: 200;
-            color: var(--tg-theme-text-color);
             background: var(--tg-theme-bg-color);
-        }
-
-        #main {
-            width: 100%;
+            color: var(--tg-theme-text-color);
             padding: 20px;
-            text-align: center;
         }
 
         h1 {
-            margin-top: 50px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .products {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--tg-theme-secondary-bg-color);
+            border-radius: 15px;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .card img {
+            width: 120px;
+            height: 120px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+
+        .card h2 {
+            font-size: 22px;
             margin-bottom: 10px;
         }
 
-        img {
-            width: 70px;
-            margin: 30px auto;
-        }
-
-        p {
-            width: 350px;
-            margin: 0 auto;
+        .price {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
         }
 
         button {
-            border: 0;
-            border-radius: 5px;
-            margin-top: 50px;
-            height: 60px;
-            width: 200px;
-            font-size: 20px;
-            font-weight: 500;
+            border: none;
+            background: #6c63ff;
+            color: white;
+            padding: 15px;
+            width: 100%;
+            border-radius: 10px;
+            font-size: 16px;
             cursor: pointer;
-            transition: all 500ms ease;
-            color: var(--tg-theme-button-color);
-            background: var(--tg-theme-button-text-color);
+            transition: 0.3s;
         }
 
         button:hover {
-            background: var(--tg-theme-secondary-bg-color);
+            opacity: 0.8;
         }
 
         #form {
             display: none;
-            text-align: center;
+            margin-top: 30px;
         }
 
         input {
-            width: 90%;
+            width: 100%;
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 10px;
+            border: 1px solid silver;
             outline: none;
-            margin: 10px 5%;
-            padding: 15px 10px;
-            font-size: 14px;
-            border: 2px solid silver;
-            border-radius: 5px;
         }
 
-        input:focus {
-            border-color: #db5d5d;
+        #error {
+            color: red;
+            margin-top: 10px;
         }
 
     </style>
 </head>
 <body>
-    <div id="main">
-        <h1>Онлайн магазин</h1>
-        <img src="https://cdn-icons-png.flaticon.com/512/3595/3595455.png">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ipsum magni, molestias.</p>
-        <button id="buy">Купити</button>
+
+<h1>🛍 Онлайн магазин</h1>
+
+<div class="products">
+
+    <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/0/191.png">
+        <h2>iPhone 15 Pro</h2>
+        <div class="price">55 999 ₴</div>
+        <button class="buy-btn" data-product="iPhone 15 Pro">
+            Купити
+        </button>
     </div>
-    <form id="form">
-        <input type="text" placeholder="Ім'я" id="user_name">
-        <input type="text" placeholder="Email" id="user_email">
-        <input type="text" placeholder="Телефон" id="user_phone">
-        <div id="error"></div>
-        <button id="order">Оформити</button>
-    </form>
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
-    <script>
-        let tg = window.Telegram.WebApp;
-        let buy = document.getElementById("buy");
-        let order = document.getElementById("order");
 
-        buy.addEventListener("click", () =>{
-            document.getElementById("main").style.display = "none";
+    <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/5969/5969044.png">
+        <h2>MacBook Air M3</h2>
+        <div class="price">64 999 ₴</div>
+        <button class="buy-btn" data-product="MacBook Air M3">
+            Купити
+        </button>
+    </div>
+
+    <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/3659/3659898.png">
+        <h2>AirPods Pro</h2>
+        <div class="price">11 999 ₴</div>
+        <button class="buy-btn" data-product="AirPods Pro">
+            Купити
+        </button>
+    </div>
+
+</div>
+
+<form id="form">
+
+    <h2 style="margin-top: 30px;">Оформлення замовлення</h2>
+
+    <input type="text" placeholder="Ваше ім'я" id="user_name">
+    <input type="email" placeholder="Email" id="user_email">
+    <input type="text" placeholder="Телефон" id="user_phone">
+
+    <div id="error"></div>
+
+    <button type="button" id="order" style="margin-top: 20px;">
+        Оформити замовлення
+    </button>
+
+</form>
+
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+<script>
+
+    let tg = window.Telegram.WebApp;
+
+    let selectedProduct = "";
+
+    let buyButtons = document.querySelectorAll(".buy-btn");
+
+    buyButtons.forEach(btn => {
+        btn.addEventListener("click", () => {
+
+            selectedProduct = btn.dataset.product;
+
+            document.querySelector(".products").style.display = "none";
             document.getElementById("form").style.display = "block";
-            document.getElementById("user_name").value = tg.initDataUnsafe.user.first_name + " " + tg.initDataUnsafe.user.last_name;
+
+            document.getElementById("user_name").value =
+                tg.initDataUnsafe.user.first_name || "";
+
         });
+    });
 
-        order.addEventListener("click", () => {
-            document.getElementById("error").innerText = '';
-            let name = document.getElementById("user_name").value;
-            let email = document.getElementById("user_email").value;
-            let phone = document.getElementById("user_phone").value;
-            if(name.length < 5){
-                document.getElementById("error").innerText = "Помилка в імені";
-                return;
-            }
-            if(email.length < 5){
-                document.getElementById("error").innerText = "Помилка в пошті";
-                return;
-            }
-            if(phone.length < 5){
-                document.getElementById("error").innerText = "Помилка в номері телефона";
-                return;
-            }
+    document.getElementById("order").addEventListener("click", () => {
 
-            let data = {
-                name: name,
-                email: email,
-                phone: phone
-            }
+        let name = document.getElementById("user_name").value;
+        let email = document.getElementById("user_email").value;
+        let phone = document.getElementById("user_phone").value;
 
-            tg.sendData(JSON.stringify(data));
-            tg.close();
-        });
-    </script>
+        if(name.length < 2) {
+            document.getElementById("error").innerText =
+                "Введіть ім'я";
+            return;
+        }
+
+        let data = {
+            product: selectedProduct,
+            name: name,
+            email: email,
+            phone: phone
+        };
+
+        tg.sendData(JSON.stringify(data));
+
+        tg.close();
+
+    });
+
+</script>
 
 </body>
 </html>
